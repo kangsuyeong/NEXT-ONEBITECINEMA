@@ -1,0 +1,25 @@
+.searchable_container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.searchable_container > input {
+  flex: 1;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid rgb(220, 220, 220);
+  color: white;
+}
+.searchable_container > input:focus {
+  outline: none;
+}
+
+.searchable_container > button {
+  width: 80px;
+  border-radius: 5px;
+  border: none;
+  background-color: gray;
+  color: white;
+  cursor: pointer;
+}
