@@ -1,0 +1,9 @@
+.recommended_movies_container {
+  display: flex;
+  gap: 4px;
+}
+.all_movies_container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 가로로 3칸 */
+  gap: 4px; /* 칸 사이 간격 */
+}
