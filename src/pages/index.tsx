@@ -4,10 +4,21 @@ import movies from "@/mock/movies.json";
 import MovieItem from "@/components/movie-Item";
 import style from "./index.module.css";
 import fetchMovies from "@/lib/fetch-movies";
-import { InferGetServerSidePropsType } from "next";
+import { InferGetServerSidePropsType, InferGetStaticPropsType } from "next";
 import fetchRandomMovies from "@/lib/fetch-random-movies";
 
-export const getServerSideProps = async () => {
+// export const getServerSideProps = async () => {
+//   const [allMovies, recoMovies] = await Promise.all([
+//     fetchMovies(),
+//     fetchRandomMovies(),
+//   ]);
+
+//   return {
+//     props: { recoMovies, allMovies },
+//   };
+// };
+
+export const getStaticProps = async () => {
   const [allMovies, recoMovies] = await Promise.all([
     fetchMovies(),
     fetchRandomMovies(),
@@ -21,7 +32,7 @@ export const getServerSideProps = async () => {
 export default function Home({
   recoMovies,
   allMovies,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className={style.container}>
       <section>
